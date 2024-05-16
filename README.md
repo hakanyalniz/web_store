@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Aim
+
+This project is meant to use TypeScript, React, styled components, and other tools to create a web store.
+
 ## Available Scripts
 
 In the project directory, you can run:
