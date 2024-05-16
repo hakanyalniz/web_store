@@ -1,9 +1,11 @@
-import React from "react";
+import HomePage from "./pages/HomePage";
+import GlobalStyle from "./styled_components/GlobalStyle";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <GlobalStyle />
+      <HomePage />
     </div>
   );
 }
