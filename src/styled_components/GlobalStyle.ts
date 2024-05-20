@@ -16,6 +16,11 @@ const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
   }
 
+  /* This height is set for development, maybe remove later */
+  html, body, #root, .App {
+    height: 100%;
+  }
+
   a {
     text-decoration: none;
   }

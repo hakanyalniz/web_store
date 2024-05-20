@@ -18,6 +18,10 @@ export const NavFlexContainer = styled.div`
   p {
     font-size: 12px;
   }
+
+  a:visited {
+    color: white;
+  }
 `;
 
 const FlexCommon = css`
@@ -68,7 +72,7 @@ export const NavLogo = styled.div`
 `;
 
 // The section that shows location to send deliveries
-export const NavLocationContainer = styled.div`
+export const NavLocationContainer = styled.a`
   ${hoverStyle}
 
   display: flex;
@@ -118,7 +122,7 @@ export const NavSearchBar = styled.div`
 `;
 
 // Select a language
-export const LanguageSelect = styled.div`
+export const LanguageSelect = styled.a`
   ${hoverStyle}
 
   display: flex;
@@ -134,7 +138,7 @@ export const LanguageSelect = styled.div`
 `;
 
 // Account information/link
-export const Account = styled.div`
+export const Account = styled.a`
   ${hoverStyle}
 
   display: flex;
@@ -146,7 +150,7 @@ export const Account = styled.div`
 `;
 
 // Shopping cart
-export const ShoppingCart = styled.div`
+export const ShoppingCart = styled.a`
   ${hoverStyle}
 
   display: flex;
@@ -156,7 +160,7 @@ export const ShoppingCart = styled.div`
   }
 `;
 
-export const ShoppingCartText = styled.span`
+export const ShoppingCartText = styled.a`
   font-size: 14px;
   font-weight: bold;
 `;

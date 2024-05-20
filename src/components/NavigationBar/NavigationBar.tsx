@@ -24,7 +24,7 @@ function NavigationBar() {
             <img src={logo} alt="WebStore Logo" />
           </a>
         </NavLogo>
-        <NavLocationContainer>
+        <NavLocationContainer href="/">
           <span className="material-symbols-outlined">location_on</span>
           <div>
             <p>Deliver to</p>
@@ -41,19 +41,19 @@ function NavigationBar() {
         </NavSearchBar>
       </NavFill>
       <NavRight>
-        <LanguageSelect>
+        <LanguageSelect href="/">
           <img src={USALan} alt="Language Flag" />
           <p>EN</p>
         </LanguageSelect>
 
-        <Account>
+        <Account href="/">
           <div>
             <p>Hello, user</p>
             <span>Account & Lists</span>
           </div>
         </Account>
 
-        <ShoppingCart>
+        <ShoppingCart href="/">
           <span className="material-symbols-outlined">shopping_cart</span>
           <ShoppingCartText>Cart</ShoppingCartText>
         </ShoppingCart>
