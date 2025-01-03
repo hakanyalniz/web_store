@@ -20,8 +20,7 @@ const webSlice = createSlice({
 export const { setFocus } = webSlice.actions;
 
 // Selectors
-export const selectFocus = (state: { webStore: { overlayState: any } }) =>
-  state.webStore.overlayState;
+export const selectFocus = (state: any) => state.webStore.overlayState;
 
 // Export the reducer to be used in the store
 export default webSlice.reducer;

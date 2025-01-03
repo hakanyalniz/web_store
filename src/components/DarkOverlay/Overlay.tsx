@@ -1,7 +1,11 @@
 import { OverlayStyle } from "./OverlayStyles";
+import { selectFocus } from "../../pages/webSlice";
+import { useSelector } from "react-redux";
 
 function Overlay() {
-  return <OverlayStyle></OverlayStyle>;
+  const isActive = useSelector(selectFocus);
+
+  return <OverlayStyle isActive={isActive}></OverlayStyle>;
 }
 
 export default Overlay;

@@ -14,8 +14,12 @@ import {
 } from "./NavigationStyles";
 import logo from "../../assets/Web-Store_transparent.png";
 import USALan from "../../assets/USA-Lan.jpg";
+import { useDispatch } from "react-redux";
+import { setFocus } from "../../pages/webSlice"; // Import actions
 
 function NavigationBar() {
+  const dispatch = useDispatch();
+
   return (
     <NavFlexContainer>
       <NavLeft>
@@ -34,7 +38,12 @@ function NavigationBar() {
       </NavLeft>
       <NavFill>
         <NavSearchBar>
-          <input type="text" placeholder="Search.." />
+          <input
+            type="text"
+            placeholder="Search.."
+            onFocus={() => dispatch(setFocus(true))}
+            onBlur={() => dispatch(setFocus(false))}
+          />
           <button>
             <span className="material-symbols-outlined">search</span>
           </button>
