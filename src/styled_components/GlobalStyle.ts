@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+
+    --orange-color: rgb(197, 128, 0);
+    --dark-orange-color: rgb(133, 86, 0);
   }
 
   /* This height is set for development, maybe remove later */

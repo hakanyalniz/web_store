@@ -86,12 +86,23 @@ export const NavLocationChange = styled.div`
 
 // Covers the entire searchbar, including the button
 export const NavSearchBar = styled.div`
+  border: 2px solid transparent; /* No border by default */
+
   display: flex;
   align-items: center;
   margin: 0 10px;
   width: 100%;
 
+  &:focus-within {
+    border-color: var(--orange-color);
+    border-radius: 8px;
+  }
+
   input {
+    border: none;
+    outline: none; // Removes the highlight outline
+
+    height: 40px;
     width: 100%;
     min-width: 100px;
     border-radius: 5px 0 0 5px;
@@ -102,10 +113,10 @@ export const NavSearchBar = styled.div`
     background: none;
   }
   .material-symbols-outlined {
-    border: 2px solid transparent;
-    padding: 5.5px 10px;
+    height: 40px;
+    padding: 5px 10px;
     border-radius: 0 5px 5px 0;
-    background-color: rgb(197, 128, 0);
+    background-color: var(--orange-color);
     font-size: 30px;
 
     -webkit-user-select: none; /* Safari */
@@ -114,7 +125,7 @@ export const NavSearchBar = styled.div`
   }
   .material-symbols-outlined:hover {
     cursor: pointer;
-    background-color: rgb(133, 86, 0);
+    background-color: var(--dark-orange-color);
   }
   .material-symbols-outlined:active {
     border-color: white;
@@ -160,7 +171,7 @@ export const ShoppingCart = styled.a`
   }
 `;
 
-export const ShoppingCartText = styled.a`
+export const ShoppingCartText = styled.span`
   font-size: 14px;
   font-weight: bold;
 `;
