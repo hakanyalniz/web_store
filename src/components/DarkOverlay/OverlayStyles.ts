@@ -11,7 +11,7 @@ export const OverlayStyle = styled.div<OverlayProps>`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent gray */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray */
   opacity: ${(props) =>
     props.isActive ? 1 : 0}; /* Show when isActive is true */
   pointer-events: none; /* Prevent interaction with overlay */

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // A slice with states and reducers that set the state
 const initialState = {
-  overlayState: 0,
+  overlayState: false,
 };
 
 // Create a slice (action + reducer)
