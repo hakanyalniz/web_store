@@ -4,19 +4,6 @@ export const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 400px; /* Adjust based on design */
-  overflow: hidden; /* Hide the slides that are out of view */
-`;
-
-export const SliderContent = styled.div.withConfig({
-  shouldForwardProp: (prop) => prop !== "index", // Don't forward "index" to the DOM
-})<{ index: number }>`
-  display: flex;
-
-  height: 100%;
-  width: 100%;
-
-  transition: transform 1s ease-in-out;
-  transform: translateX(${(props) => -props.index * 100}%);
 `;
 
 export const Slide = styled.div.withConfig({
@@ -24,8 +11,9 @@ export const Slide = styled.div.withConfig({
 })<{ imageURL: string }>`
   position: relative;
 
-  min-width: 100%;
+  /* For some reason the percentage doesn't work */
   height: 100%;
+  min-width: 100%;
 
   background-image: linear-gradient(
       to bottom,
@@ -53,10 +41,17 @@ export const NavButton = styled.button`
   }
 `;
 
-export const PrevButton = styled(NavButton)`
-  left: 10px;
-`;
+export const SlideArrow = styled.div`
+  display: block;
+  color: white;
+  text-align: center;
 
-export const NextButton = styled(NavButton)`
-  right: 10px;
+  &:hover {
+    color: gray;
+  }
+
+  span {
+    font-size: 30px;
+    opacity: 0.7;
+  }
 `;

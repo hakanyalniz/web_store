@@ -19,6 +19,27 @@ const GlobalStyle = createGlobalStyle`
     --dark-orange-color: rgb(133, 86, 0);
   }
 
+  /* For some reason it does not work if not set to 100% here as global value */
+  /* Also setting slick settings to a clean state, mostly */
+  .slick-list, .slick-slider, .slight-slide, .slick-list div {
+    height: 100%;
+  } 
+
+  .slick-next:before, .slick-prev:before {
+    content: none;
+  }
+
+  .slick-prev {
+    left: 10px; /* Adjust to move the previous arrow */
+    z-index: 1;
+
+  }
+
+  .slick-next {
+    right: 10px; /* Adjust to move the next arrow */
+    z-index: 1;
+  }
+
   /* This height is set for development, maybe remove later */
   html, body, #root, .App {
     height: 100%;

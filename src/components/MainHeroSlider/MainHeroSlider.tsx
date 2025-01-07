@@ -1,56 +1,41 @@
-import {
-  SliderWrapper,
-  SliderContent,
-  Slide,
-  PrevButton,
-  NextButton,
-} from "./MainHeroSliderStyles";
-import { useState, useEffect } from "react";
+import { SliderWrapper, Slide, SlideArrow } from "./MainHeroSliderStyles";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel";
 
 // {slider} is destructuring of props.slides
 function MainHeroSlider() {
-  //   let slides = ["/OIG2.jpeg", "/OIG3.jpeg", "/OIG4.jpeg"];
+  const imageSet = ["/OIG2.jpeg", "/OIG3.jpeg", "/OIG4.jpeg"];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentSlides, setCurrentSlides] = useState([
-    "/OIG2.jpeg",
-    "/OIG3.jpeg",
-    "/OIG4.jpeg",
-  ]);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? currentSlides.length - 1 : prevIndex - 1
-    );
+  const settings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    prevArrow: (
+      <SlideArrow>
+        {<span className="material-symbols-outlined">arrow_back_ios</span>}
+      </SlideArrow>
+    ),
+    nextArrow: (
+      <SlideArrow>
+        {<span className="material-symbols-outlined">arrow_forward_ios</span>}
+      </SlideArrow>
+    ),
   };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === currentSlides.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  // This fixes the problem that occurred due to the jump from transformX(200%) to transformX(0%)
-  // (from the last image to the next one when you clicked the next button)
-  // However it is a dirty fix that is not sustainable due to the large number of images it would generate
-  // A better fix would be to either not use carousel style hero images or use a library like "slick"
-  useEffect(() => {
-    // trigger when on the last hero image
-    if (currentIndex === currentSlides.length - 1) {
-      //   When on the last image, copy the older ones in front of it
-      setCurrentSlides(currentSlides.concat(currentSlides));
-    }
-  }, [currentIndex, currentSlides]);
 
   return (
     <SliderWrapper>
-      <SliderContent index={currentIndex}>
-        {currentSlides.map((slide, index) => (
+      <Slider {...settings}>
+        {imageSet.map((slide, index) => (
           <Slide key={index} imageURL={slide} />
         ))}
-      </SliderContent>
-      <PrevButton onClick={handlePrev}>Prev</PrevButton>
-      <NextButton onClick={handleNext}>Next</NextButton>
+      </Slider>
     </SliderWrapper>
   );
 }
