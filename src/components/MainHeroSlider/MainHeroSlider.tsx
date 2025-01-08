@@ -7,7 +7,11 @@ import "slick-carousel";
 
 // {slider} is destructuring of props.slides
 function MainHeroSlider() {
-  const imageSet = ["/OIG2.jpeg", "/OIG3.jpeg", "/OIG4.jpeg"];
+  const imageSet = [
+    "/images/heroImages/OIG2.jpeg",
+    "/images/heroImages/OIG3.jpeg",
+    "/images/heroImages/OIG4.jpeg",
+  ];
 
   const settings = {
     infinite: true,
