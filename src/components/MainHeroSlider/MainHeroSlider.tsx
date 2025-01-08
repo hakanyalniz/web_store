@@ -13,7 +13,6 @@ function MainHeroSlider() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
     arrows: true,
     autoplay: false,
     autoplaySpeed: 2000,

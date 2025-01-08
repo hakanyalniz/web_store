@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 16px;
 
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -18,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     --orange-color: rgb(197, 128, 0);
     --dark-orange-color: rgb(133, 86, 0);
   }
+
 
   /* For some reason it does not work if not set to 100% here as global value */
   /* Also setting slick settings to a clean state, mostly */
